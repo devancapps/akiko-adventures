@@ -3,544 +3,198 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Find the best travel deals, cheap flights on Trip.com, and curated hotel recommendations. Expert travel guides and tips for smart travelers.">
-    <meta name="keywords" content="travel deals, cheap flights, hotel deals, Trip.com flights, travel guides, budget travel">
-    <meta property="og:title" content="Akiko Adventures – Smart Travel Deals & Guides">
-    <meta property="og:description" content="Your gateway to cheap flights, dreamy hotels, and curated travel guides. Find the best deals on Trip.com and expert travel recommendations.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://akiko-adventures.web.app">
-    <meta property="og:image" content="https://akiko-adventures.web.app/assets/hero-image.jpg">
     <title>Akiko Adventures – Travel Deals & Guides</title>
-    
-    <!-- Security Headers -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://tp.media https://c121.travelpayouts.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self' https://tp.media https://c121.travelpayouts.com;">
-    <meta http-equiv="X-Content-Type-Options" content="nosniff">
-    <meta http-equiv="X-Frame-Options" content="DENY">
-    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
-    
-    <!-- Preconnect to External Domains -->
-    <link rel="preconnect" href="https://tp.media">
-    <link rel="preconnect" href="https://c121.travelpayouts.com">
-    
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://akiko-adventures.web.app">
-    
-    <!-- Stylesheets -->
     <link rel="stylesheet" href="/styles.css">
-    <style>
-        body {
-            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            background: #f9fafb;
-            margin: 0;
-            color: #111;
-            line-height: 1.5;
-        }
-        header {
-            background: linear-gradient(90deg, #2e7cff, #6a94ff);
-            color: white;
-            padding: 2rem;
-            text-align: center;
-        }
-        nav a {
-            color: white;
-            margin: 0 1rem;
-            font-weight: bold;
-            text-decoration: none;
-            transition: opacity 0.2s ease;
-        }
-        nav a:hover {
-            opacity: 0.8;
-        }
-        h1 {
-            font-size: clamp(2rem, 5vw, 2.5rem);
-            margin-bottom: 0.5rem;
-        }
-        main {
-            padding: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        section {
-            margin-bottom: 3rem;
-        }
-        .blog-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-        }
-        article {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 1rem;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-            transition: transform 0.2s ease-in-out;
-        }
-        article:hover {
-            transform: translateY(-5px);
-        }
-        article h3 {
-            margin-top: 0;
-        }
-        article a {
-            color: #2e7cff;
-            text-decoration: none;
-        }
-        article a:hover {
-            text-decoration: underline;
-        }
-        footer {
-            background: #1c1c1c;
-            color: white;
-            text-align: center;
-            padding: 1rem;
-        }
-        #subscribe form {
-            display: flex;
-            flex-direction: column;
-            max-width: 400px;
-            margin: auto;
-        }
-        #subscribe input[type="email"] {
-            padding: 0.8rem;
-            margin-bottom: 0.5rem;
-            border-radius: 0.5rem;
-            border: 1px solid #ccc;
-            font-size: 1rem;
-        }
-        #subscribe button {
-            padding: 0.8rem;
-            background: #2e7cff;
-            color: white;
-            font-weight: bold;
-            border: none;
-            border-radius: 0.5rem;
-            cursor: pointer;
-            transition: background-color 0.2s ease;
-            font-size: 1rem;
-        }
-        #subscribe button:hover {
-            background: #1e6bef;
-        }
-        
-        /* Accessibility Improvements */
-        @media (prefers-reduced-motion: reduce) {
-            * {
-                animation: none !important;
-                transition: none !important;
-            }
-        }
-        
-        /* Dark Mode Support */
-        @media (prefers-color-scheme: dark) {
-            body {
-                background: #111;
-                color: #f9fafb;
-            }
-            article {
-                background: #1c1c1c;
-                box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-            }
-            #subscribe input[type="email"] {
-                background: #2c2c2c;
-                border-color: #444;
-                color: white;
-            }
-        }
-        
-        /* Hero Section Styles */
-        .hero {
-            position: relative;
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-                        url('/assets/hero-japan.jpg') center/cover no-repeat;
-            min-height: 80vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            padding: 2rem;
-        }
-
-        .hero-content {
-            max-width: 800px;
-            z-index: 1;
-        }
-
-        .hero h1 {
-            font-size: clamp(2.5rem, 8vw, 4rem);
-            margin-bottom: 1rem;
-            line-height: 1.2;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
-
-        .hero p {
-            font-size: clamp(1.1rem, 3vw, 1.5rem);
-            margin-bottom: 2rem;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-        }
-
-        .hero-nav {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            padding: 1rem;
-            border-radius: 50px;
-            margin-top: 2rem;
-        }
-
-        .hero-nav a {
-            color: white;
-            text-decoration: none;
-            padding: 0.5rem 1.5rem;
-            margin: 0 0.5rem;
-            border-radius: 25px;
-            transition: background-color 0.3s ease;
-        }
-
-        .hero-nav a:hover {
-            background: rgba(255, 255, 255, 0.2);
-        }
-
-        /* Scroll Down Indicator */
-        .scroll-down {
-            position: absolute;
-            bottom: 2rem;
-            left: 50%;
-            transform: translateX(-50%);
-            animation: bounce 2s infinite;
-            cursor: pointer;
-            color: white;
-            text-decoration: none;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            font-size: 0.9rem;
-        }
-
-        .scroll-down svg {
-            width: 24px;
-            height: 24px;
-            margin-top: 0.5rem;
-        }
-
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {
-                transform: translateY(0);
-            }
-            40% {
-                transform: translateY(-10px);
-            }
-            60% {
-                transform: translateY(-5px);
-            }
-        }
-
-        /* Main Content Adjustments */
-        main {
-            position: relative;
-            background: #f9fafb;
-            border-radius: 2rem 2rem 0 0;
-            margin-top: -2rem;
-            padding-top: 3rem;
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            .scroll-down {
-                animation: none;
-            }
-        }
-    </style>
+    <script data-noptimize="1" data-cfasync="false" data-wpfc-render="false">
+        (function () {
+            var script = document.createElement("script");
+            script.async = 1;
+            script.src = 'https://mn-tz.com/NDA5NjY0.js?t=409664';
+            document.head.appendChild(script);
+        })();
+    </script>
 </head>
 <body>
     <header>
         <h1>Akiko Adventures</h1>
+        <p>Your gateway to cheap flights, dreamy hotels, and curated travel guides.</p>
+        <nav>
+            <a href="/index.html">Home</a>
+            <a href="/blog/fly-to-japan-under-500.html">Blog</a>
+            <a href="#subscribe">Subscribe</a>
+        </nav>
     </header>
 
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Discover Japan's Hidden Wonders</h1>
-            <p>Embark on an unforgettable journey through ancient traditions and modern marvels</p>
-            <nav class="hero-nav">
-                <a href="#destinations">Destinations</a>
-                <a href="#experiences">Experiences</a>
-                <a href="#planning">Plan Your Trip</a>
-            </nav>
-        </div>
-        <a href="#main-content" class="scroll-down">
-            Explore More
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M7 13l5 5 5-5"/>
-                <path d="M7 6l5 5 5-5"/>
-            </svg>
-        </a>
-    </section>
-
-    <main id="main-content">
+    <main>
         <!-- Featured Blog Posts Section -->
         <section id="blog-posts">
             <h2>Latest Travel Guides</h2>
-            <div class="blog-list" id="blog-list">
-                <!-- Blog posts will be populated by JavaScript -->
-            </div>
-            <div class="blog-pagination" id="blog-pagination">
-                <!-- Pagination buttons will be added by JavaScript -->
-            </div>
-        </section>
-
-        <!-- Trending Travel Deals Section -->
-        <section id="trending-deals">
-            <h2>Trending Travel Deals</h2>
-            <div class="trending-deals">
-                <div class="deal-card">
-                    <img src="/assets/tokyo.jpg" alt="Tokyo" class="deal-image">
-                    <div class="deal-content">
-                        <h3 class="deal-title">Tokyo, Japan</h3>
-                        <p class="deal-price">Flights from $499</p>
-                        <a href="https://www.travelpayouts.com/redirect?marker=624965&url=https%3A%2F%2Fwww.trip.com%2Fflights%2Ftokyo-nrt%2F" 
-                           class="deal-button" target="_blank">Search Deals</a>
-                    </div>
-                </div>
-                <div class="deal-card">
-                    <img src="/assets/paris.jpg" alt="Paris" class="deal-image">
-                    <div class="deal-content">
-                        <h3 class="deal-title">Paris, France</h3>
-                        <p class="deal-price">Flights from $399</p>
-                        <a href="https://www.travelpayouts.com/redirect?marker=624965&url=https%3A%2F%2Fwww.trip.com%2Fflights%2Fparis-cdg%2F" 
-                           class="deal-button" target="_blank">Search Deals</a>
-                    </div>
-                </div>
-                <div class="deal-card">
-                    <img src="/assets/new-york.jpg" alt="New York" class="deal-image">
-                    <div class="deal-content">
-                        <h3 class="deal-title">New York, USA</h3>
-                        <p class="deal-price">Flights from $199</p>
-                        <a href="https://www.travelpayouts.com/redirect?marker=624965&url=https%3A%2F%2Fwww.trip.com%2Fflights%2Fnew-york-jfk%2F" 
-                           class="deal-button" target="_blank">Search Deals</a>
-                    </div>
-                </div>
+            <div class="blog-list">
+                <article>
+                    <h3><a href="/blog/fly-to-japan-under-500.html">How to Fly to Japan for Under $500</a></h3>
+                    <p>Discover the cheapest months, airlines, and routes to Tokyo – with live price tracking from Skyscanner.</p>
+                </article>
+                <article>
+                    <h3><a href="/blog/where-to-stay-in-tokyo.html">Where to Stay in Tokyo – Best Hotels in 2025</a></h3>
+                    <p>Compare Tokyo hotels under $100. Powered by Booking.com.</p>
+                </article>
             </div>
         </section>
 
         <!-- Top Flight Deals Widget -->
-        <section id="flight-deals" aria-label="Flight Search">
+        <section id="flight-deals">
             <h2>Search Flights Anywhere</h2>
-            <div id="trip-flight-widget"></div>
             <script 
                 async 
                 src="https://tp.media/content?trs=409664&shmarker=624965&locale=en&curr=USD&powered_by=true&border_radius=0&plain=true&color_button=%232681ff&color_button_text=%23ffffff&color_border=%232681ff&promo_id=4132&campaign_id=121" 
-                charset="utf-8"
-                crossorigin="anonymous"
-                referrerpolicy="origin">
+                charset="utf-8">
             </script>
         </section>
 
         <!-- Hotel Deals Widget -->
-        <section id="hotel-deals" aria-label="Hotel Search">
-            <h2>Book a Hotel Anywhere</h2>
-            <div id="hotel-widget"></div>
+        <section id="hotel-deals">
+            <h2>Find Your Perfect Hotel</h2>
             <script 
                 async 
                 src="https://c121.travelpayouts.com/content?trs=409664&shmarker=624965&lang=www&layout=S10391&powered_by=true&promo_id=4038" 
-                charset="utf-8"
-                crossorigin="anonymous"
-                referrerpolicy="origin">
+                charset="utf-8">
             </script>
         </section>
 
         <!-- Destination Deep Links Grid -->
-        <section id="popular-destinations">
-            <h2>Top Travel Deals by Destination</h2>
-            <ul>
-                <li><a href="https://trip.tp.st/Xzg2aMan" target="_blank">New York → London</a></li>
-                <li><a href="https://trip.tp.st/Xzg2aMan" target="_blank">San Francisco → Bangkok</a></li>
-                <li><a href="https://trip.tp.st/Xzg2aMan" target="_blank">Los Angeles → Paris</a></li>
-                <li><a href="https://trip.tp.st/Xzg2aMan" target="_blank">Chicago → Taipei</a></li>
-                <li><a href="https://trip.tp.st/Xzg2aMan" target="_blank">Seattle → Seoul</a></li>
-                <li><a href="https://trip.tp.st/Xzg2aMan" target="_blank">Dallas → Sydney</a></li>
-                <li><a href="https://trip.tp.st/Xzg2aMan" target="_blank">Miami → Lima</a></li>
-                <li><a href="https://trip.tp.st/Xzg2aMan" target="_blank">Chicago → Delhi</a></li>
-                <li><a href="https://trip.tp.st/Xzg2aMan" target="_blank">New York → Dubai</a></li>
-                <li><a href="https://trip.tp.st/Xzg2aMan" target="_blank">San Francisco → Tokyo</a></li>
-            </ul>
+        <section id="popular-destinations" class="my-12">
+            <h2 class="text-2xl font-bold mb-6 px-4">Top Travel Deals by Destination</h2>
+            
+            <!-- Carousel Container -->
+            <div class="relative overflow-hidden">
+                <!-- Previous Button -->
+                <button onclick="slideCarousel(-1)" class="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-white/80 hover:bg-white p-2 rounded-r-lg shadow-md">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                    </svg>
+                </button>
+
+                <!-- Carousel Track -->
+                <div id="carousel-track" class="flex gap-4 px-4 transition-transform duration-300 ease-in-out">
+                    <!-- London -->
+                    <a href="https://trip.tp.st/Xzg2aMan" class="destination-card flex-none w-72 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                        <div class="relative h-48">
+                            <img src="/assets/destinations/london.jpg" alt="London" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                            <div class="absolute bottom-4 left-4 text-white">
+                                <h3 class="text-xl font-bold">London</h3>
+                                <p class="text-sm">from New York</p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Bangkok -->
+                    <a href="https://trip.tp.st/Xzg2aMan" class="destination-card flex-none w-72 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                        <div class="relative h-48">
+                            <img src="/assets/destinations/bangkok.jpg" alt="Bangkok" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                            <div class="absolute bottom-4 left-4 text-white">
+                                <h3 class="text-xl font-bold">Bangkok</h3>
+                                <p class="text-sm">from San Francisco</p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Paris -->
+                    <a href="https://trip.tp.st/Xzg2aMan" class="destination-card flex-none w-72 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                        <div class="relative h-48">
+                            <img src="/assets/destinations/paris.jpg" alt="Paris" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                            <div class="absolute bottom-4 left-4 text-white">
+                                <h3 class="text-xl font-bold">Paris</h3>
+                                <p class="text-sm">from Los Angeles</p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Tokyo -->
+                    <a href="https://trip.tp.st/Xzg2aMan" class="destination-card flex-none w-72 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                        <div class="relative h-48">
+                            <img src="/assets/destinations/tokyo.jpg" alt="Tokyo" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                            <div class="absolute bottom-4 left-4 text-white">
+                                <h3 class="text-xl font-bold">Tokyo</h3>
+                                <p class="text-sm">from San Francisco</p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Seoul -->
+                    <a href="https://trip.tp.st/Xzg2aMan" class="destination-card flex-none w-72 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                        <div class="relative h-48">
+                            <img src="/assets/destinations/seoul.jpg" alt="Seoul" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                            <div class="absolute bottom-4 left-4 text-white">
+                                <h3 class="text-xl font-bold">Seoul</h3>
+                                <p class="text-sm">from Seattle</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Next Button -->
+                <button onclick="slideCarousel(1)" class="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-white/80 hover:bg-white p-2 rounded-l-lg shadow-md">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Carousel Navigation Dots -->
+            <div class="flex justify-center gap-2 mt-4">
+                <button onclick="goToSlide(0)" class="w-2 h-2 rounded-full bg-blue-600"></button>
+                <button onclick="goToSlide(1)" class="w-2 h-2 rounded-full bg-gray-300"></button>
+                <button onclick="goToSlide(2)" class="w-2 h-2 rounded-full bg-gray-300"></button>
+            </div>
         </section>
+
+        <script>
+            let currentSlide = 0;
+            const track = document.getElementById('carousel-track');
+            const cards = document.querySelectorAll('.destination-card');
+            const cardWidth = 288; // 272px card + 16px gap
+            const maxSlide = Math.ceil(cards.length / 3) - 1;
+
+            function slideCarousel(direction) {
+                currentSlide = Math.max(0, Math.min(maxSlide, currentSlide + direction));
+                updateCarousel();
+            }
+
+            function goToSlide(slideIndex) {
+                currentSlide = slideIndex;
+                updateCarousel();
+            }
+
+            function updateCarousel() {
+                const offset = -currentSlide * (cardWidth * 3);
+                track.style.transform = `translateX(${offset}px)`;
+                
+                // Update dots
+                document.querySelectorAll('#popular-destinations .flex.justify-center button').forEach((dot, index) => {
+                    dot.classList.toggle('bg-blue-600', index === currentSlide);
+                    dot.classList.toggle('bg-gray-300', index !== currentSlide);
+                });
+            }
+        </script>
 
         <!-- Email Subscription Section -->
         <section id="subscribe">
             <h2>Subscribe for Weekly Travel Deals</h2>
             <p>Get flight hacks, travel gear tips, and top hotel deals straight to your inbox.</p>
-            <form action="/api/subscribe" method="POST" id="subscribe-form">
-                <input 
-                    type="email" 
-                    name="email" 
-                    id="email"
-                    placeholder="Enter your email" 
-                    required 
-                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
-                    aria-label="Email address">
+            <form action="https://your-email-platform.com/subscribe" method="POST">
+                <input type="email" name="email" placeholder="Enter your email" required>
                 <button type="submit">Subscribe</button>
             </form>
         </section>
     </main>
 
     <footer>
-        <div class="footer-content">
-            <div>
-                <h3>Akiko Adventures</h3>
-                <p>Your gateway to extraordinary travel experiences</p>
-                <div class="social-links">
-                    <a href="mailto:contact@akikoadventures.com" aria-label="Email">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                            <polyline points="22,6 12,13 2,6"/>
-                        </svg>
-                    </a>
-                    <a href="https://instagram.com/akikoadventures" aria-label="Instagram" target="_blank">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
-                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
-                        </svg>
-                    </a>
-                </div>
-            </div>
-            <div>
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="#destinations">Destinations</a></li>
-                    <li><a href="#experiences">Experiences</a></li>
-                    <li><a href="#planning">Plan Your Trip</a></li>
-                    <li><a href="/privacy-policy.html">Privacy Policy</a></li>
-                    <li><a href="/terms.html">Terms of Service</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>© 2025 Akiko Adventures. Built with 💙 in 2025</p>
-            <p>Affiliate disclosure: We may earn from qualifying purchases through Trip.com and other partners.</p>
-        </div>
+        <p>© 2025 Akiko Adventures. Travel smarter. Affiliate disclosure: We may earn from qualifying purchases.</p>
     </footer>
-
-    <!-- Blog Data and Pagination Script -->
-    <script>
-        const blogData = [
-            {
-                title: "How to Fly to Japan for Under $500",
-                excerpt: "Discover the cheapest months, airlines, and routes to Tokyo – with live price tracking from Trip.com.",
-                image: "/assets/japan-flight.jpg",
-                link: "/blog/fly-to-japan-under-500.html"
-            },
-            {
-                title: "Where to Stay in Tokyo – Best Hotels in 2025",
-                excerpt: "Compare Tokyo hotels under $100. Find the perfect neighborhood and accommodation for your budget.",
-                image: "/assets/tokyo-hotel.jpg",
-                link: "/blog/where-to-stay-in-tokyo.html"
-            },
-            {
-                title: "10 Hidden Gems in Kyoto",
-                excerpt: "Explore secret temples, traditional tea houses, and local markets away from tourist crowds.",
-                image: "/assets/kyoto.jpg",
-                link: "/blog/hidden-gems-kyoto.html"
-            },
-            {
-                title: "Japan Rail Pass Guide 2025",
-                excerpt: "Everything you need to know about saving money on train travel in Japan.",
-                image: "/assets/rail-pass.jpg",
-                link: "/blog/japan-rail-pass-guide.html"
-            },
-            {
-                title: "Best Time to Visit Mount Fuji",
-                excerpt: "Monthly weather guide and tips for the perfect view of Japan's iconic mountain.",
-                image: "/assets/mount-fuji.jpg",
-                link: "/blog/best-time-mount-fuji.html"
-            },
-            {
-                title: "Tokyo Food Guide: Local Favorites",
-                excerpt: "From street food to Michelin stars - where locals really eat in Tokyo.",
-                image: "/assets/tokyo-food.jpg",
-                link: "/blog/tokyo-food-guide.html"
-            },
-            {
-                title: "Onsen Etiquette: Complete Guide",
-                excerpt: "Everything you need to know about Japanese hot springs - customs, rules, and top locations.",
-                image: "/assets/onsen.jpg",
-                link: "/blog/onsen-etiquette.html"
-            },
-            {
-                title: "Budget Travel in Japan",
-                excerpt: "How to explore Japan on less than $70 per day - accommodation, food, and transport tips.",
-                image: "/assets/budget-japan.jpg",
-                link: "/blog/budget-travel-japan.html"
-            },
-            {
-                title: "Cherry Blossom Season 2025",
-                excerpt: "Forecast dates and best viewing spots for sakura season across Japan.",
-                image: "/assets/cherry-blossom.jpg",
-                link: "/blog/cherry-blossom-forecast.html"
-            }
-        ];
-
-        const itemsPerPage = 9;
-        let currentPage = 1;
-
-        function renderBlogPosts() {
-            const blogList = document.getElementById('blog-list');
-            const startIndex = (currentPage - 1) * itemsPerPage;
-            const endIndex = startIndex + itemsPerPage;
-            const currentPosts = blogData.slice(startIndex, endIndex);
-
-            blogList.innerHTML = currentPosts.map(post => `
-                <article>
-                    <img src="${post.image}" alt="${post.title}" style="width: 100%; height: 200px; object-fit: cover; border-radius: 0.5rem 0.5rem 0 0;">
-                    <h3><a href="${post.link}">${post.title}</a></h3>
-                    <p>${post.excerpt}</p>
-                </article>
-            `).join('');
-
-            renderPagination();
-        }
-
-        function renderPagination() {
-            const totalPages = Math.ceil(blogData.length / itemsPerPage);
-            const pagination = document.getElementById('blog-pagination');
-            
-            let paginationHTML = '';
-            for (let i = 1; i <= totalPages; i++) {
-                paginationHTML += `
-                    <button class="pagination-button ${i === currentPage ? 'active' : ''}" 
-                            onclick="changePage(${i})">
-                        ${i}
-                    </button>
-                `;
-            }
-            pagination.innerHTML = paginationHTML;
-        }
-
-        function changePage(page) {
-            currentPage = page;
-            renderBlogPosts();
-            window.scrollTo({ top: document.getElementById('blog-posts').offsetTop - 100, behavior: 'smooth' });
-        }
-
-        // Initial render
-        renderBlogPosts();
-    </script>
-
-    <!-- Structured Data -->
-    <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "TravelAgency",
-            "name": "Akiko Adventures",
-            "url": "https://akiko-adventures.web.app",
-            "description": "Your gateway to cheap flights, dreamy hotels, and curated travel guides.",
-            "address": {
-                "@type": "PostalAddress",
-                "addressCountry": "US"
-            },
-            "sameAs": [
-                "https://twitter.com/akikoadventures",
-                "https://instagram.com/akikoadventures"
-            ]
-        }
-    </script>
 </body>
 </html> 

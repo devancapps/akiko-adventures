@@ -1,0 +1,14 @@
+Please replace these placeholder images with actual high-quality destination photos:
+
+london.jpg: https://images.unsplash.com/photo-1513635269975-59663e0ac1ad
+bangkok.jpg: https://images.unsplash.com/photo-1508009603885-50cf7c579365
+paris.jpg: https://images.unsplash.com/photo-1502602898657-3e91760cbb34
+tokyo.jpg: https://images.unsplash.com/photo-1540959733332-eab4deabeeaf
+seoul.jpg: https://images.unsplash.com/photo-1538485399081-7c8ed94cde6e
+
+Image requirements:
+- Minimum resolution: 1200x800px
+- Aspect ratio: 3:2 (landscape)
+- File size: Optimize for web (< 300KB each)
+- Format: JPEG
+- Content: Iconic cityscape or landmark shots 
