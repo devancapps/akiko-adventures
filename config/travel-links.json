@@ -1,0 +1,108 @@
+{
+  "destinations": {
+    "tokyo": {
+      "name": "Tokyo",
+      "country": "Japan",
+      "links": {
+        "hotels": {
+          "primary": {
+            "provider": "travelpayouts",
+            "url": "https://www.travelpayouts.com/redirect?marker=624965&url=https%3A%2F%2Fwww.booking.com%2Fcity%2Fjp%2Ftokyo.html",
+            "text": "Book hotels in Tokyo"
+          },
+          "fallback": {
+            "provider": "booking",
+            "url": "https://www.booking.com/city/jp/tokyo.html?aid=YOUR_ID",
+            "text": "Find Tokyo hotels on Booking.com"
+          }
+        },
+        "flights": {
+          "primary": {
+            "provider": "travelpayouts",
+            "widget_id": "1234",
+            "params": {
+              "origin": "auto",
+              "destination": "NRT",
+              "currency": "usd"
+            }
+          },
+          "fallback": {
+            "provider": "skyscanner",
+            "url": "https://www.skyscanner.com/transport/flights/nyca/tyoa/?associateID=YOUR_ID",
+            "text": "Search flights to Tokyo"
+          }
+        }
+      }
+    },
+    "london": {
+      "name": "London",
+      "country": "United Kingdom",
+      "links": {
+        "hotels": {
+          "primary": {
+            "provider": "travelpayouts",
+            "url": "https://www.travelpayouts.com/redirect?marker=624965&url=https%3A%2F%2Fwww.booking.com%2Fcity%2Fgb%2Flondon.html",
+            "text": "Book hotels in London"
+          },
+          "fallback": {
+            "provider": "booking",
+            "url": "https://www.booking.com/city/gb/london.html?aid=YOUR_ID",
+            "text": "Find London hotels on Booking.com"
+          }
+        },
+        "flights": {
+          "primary": {
+            "provider": "travelpayouts",
+            "widget_id": "1234",
+            "params": {
+              "origin": "auto",
+              "destination": "LHR",
+              "currency": "usd"
+            }
+          },
+          "fallback": {
+            "provider": "skyscanner",
+            "url": "https://www.skyscanner.com/transport/flights/nyca/lond/?associateID=YOUR_ID",
+            "text": "Search flights to London"
+          }
+        }
+      }
+    }
+  },
+  "widgets": {
+    "flight_search": {
+      "primary": {
+        "provider": "travelpayouts",
+        "base_url": "https://tp.media/content",
+        "default_params": {
+          "promo_id": "1234",
+          "shmarker": "624965",
+          "locale": "en",
+          "currency": "usd",
+          "powered_by": "true"
+        }
+      },
+      "fallback": {
+        "provider": "skyscanner",
+        "base_url": "https://widgets.skyscanner.net/widget-server/widgets/iframe",
+        "default_params": {
+          "associateID": "YOUR_ID",
+          "currency": "USD",
+          "locale": "en-US"
+        }
+      }
+    },
+    "hotel_search": {
+      "primary": {
+        "provider": "travelpayouts",
+        "base_url": "https://tp.media/hotels",
+        "default_params": {
+          "id": "5678",
+          "shmarker": "624965",
+          "locale": "en",
+          "currency": "usd"
+        }
+      }
+    }
+  }
+} 
