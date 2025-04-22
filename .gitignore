@@ -1,25 +1,67 @@
+# Environment Variables
+.env
+.env.local
+.env.*.local
+.env.development
+.env.test
+.env.production
+
 # Firebase
 .firebase/
 firebase-debug.log
+.firebaserc
+firebase-debug.*.log
+firebase-export-*
+.runtimeconfig.json
 
-# Node
+# Dependencies
 node_modules/
 package-lock.json
+yarn.lock
 
-# Environment
-.env
-.env.local
+# Build outputs
+dist/
+build/
+*.bundle.js
+*.chunk.js
 
-# OS
-.DS_Store
-Thumbs.db
+# Logs and debugging
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+debug.log
 
-# IDE
+# IDE and Editor files
 .idea/
 .vscode/
 *.swp
 *.swo
+*.swn
+*.bak
+*.sublime-*
+.project
+.settings/
 
-# Build
-dist/
-build/ 
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Security and keys
+*.pem
+*.key
+*.cert
+*.crt
+*.csr
+*.p12
+*.pfx
+credentials.json
+*_rsa
+*_dsa
+*.pub 
