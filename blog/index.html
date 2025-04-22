@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore travel guides, tips, and destination reviews from Akiko Adventures. Find the best advice for your next trip to Japan and beyond.">
+    <title>Travel Blog - Akiko Adventures</title>
+    <link rel="stylesheet" href="./blog-styles.css">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    
+    <style>
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .blog-card {
+            background: white;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .blog-card-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .blog-card-content {
+            padding: 1.5rem;
+        }
+
+        .blog-card h2 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+        }
+
+        .blog-card p {
+            color: var(--dark-gray);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .blog-card-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .blog-card-link:hover {
+            color: var(--secondary-color);
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 3rem 0;
+        }
+
+        .pagination button {
+            background: white;
+            border: 1px solid var(--light-gray);
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.2s ease;
+        }
+
+        .pagination button:hover:not(:disabled) {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        .pagination button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .page-header {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            color: white;
+            margin-bottom: 2rem;
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .page-header p {
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="blog-nav">
+        <div class="container mx-auto px-4 py-4">
+            <a href="/" class="active">Home</a>
+            <a href="./index.html">Blog</a>
+            <a href="/resources.html">Resources</a>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <h1>Travel Blog</h1>
+        <p>Discover travel guides, tips, and destination reviews to help plan your next adventure</p>
+    </header>
+
+    <!-- Blog Grid -->
+    <div class="blog-grid" id="blogGrid"></div>
+
+    <!-- Pagination -->
+    <div class="pagination" id="pagination">
+        <button id="prevPage" onclick="previousPage()">
+            <i class="fas fa-chevron-left"></i> Previous
+        </button>
+        <button id="nextPage" onclick="nextPage()">
+            Next <i class="fas fa-chevron-right"></i>
+        </button>
+    </div>
+
+    <!-- Blog Data and Pagination Logic -->
+    <script>
+        const blogData = [
+            {
+                title: "Where to Stay in London – Complete 2024 Guide",
+                excerpt: "Discover the best areas to stay in London, from budget-friendly neighborhoods to luxury districts. Find your perfect accommodation in the British capital.",
+                image: "../assets/destinations/london-hotel.jpg",
+                link: "/blog/where-to-stay-in-london.html"
+            },
+            {
+                title: "Where to Stay in Sydney – Best Areas & Hotels 2024",
+                excerpt: "From beachside suburbs to the bustling CBD, find the perfect place to stay in Sydney. Compare neighborhoods and accommodations for every budget.",
+                image: "../assets/destinations/sydney-hotel.jpg",
+                link: "/blog/where-to-stay-in-sydney.html"
+            },
+            {
+                title: "How to Fly to Japan for Under $500",
+                excerpt: "Discover the cheapest months, airlines, and routes to Tokyo. Learn insider tips for finding budget flights and making your dream trip affordable.",
+                image: "../assets/destinations/tokyo.jpg",
+                link: "/blog/fly-to-japan-under-500.html"
+            },
+            {
+                title: "Where to Stay in Tokyo – Best Hotels in 2024",
+                excerpt: "Compare Tokyo hotels under $100. Find the perfect neighborhood and accommodation for your budget in Japan's exciting capital.",
+                image: "../assets/destinations/tokyo-hotel.jpg",
+                link: "/blog/where-to-stay-in-tokyo.html"
+            },
+            {
+                title: "10 Hidden Gems in Kyoto's Ancient Streets",
+                excerpt: "Explore secret temples, traditional tea houses, and local markets away from the tourist crowds in Japan's cultural capital.",
+                image: "../assets/destinations/kyoto.jpg",
+                link: "/blog/hidden-gems-kyoto.html"
+            },
+            {
+                title: "Ultimate Guide to Japanese Street Food",
+                excerpt: "From takoyaki to ramen, discover the best street food spots and must-try dishes across Japan's major cities.",
+                image: "../assets/destinations/street-food.jpg",
+                link: "/blog/japanese-street-food-guide.html"
+            },
+            {
+                title: "Cherry Blossom Season: When and Where to Go",
+                excerpt: "Plan your perfect hanami experience with our comprehensive guide to cherry blossom viewing in Japan.",
+                image: "../assets/destinations/cherry-blossom.jpg",
+                link: "/blog/cherry-blossom-guide.html"
+            },
+            {
+                title: "Budget Travel in Japan: Complete Guide",
+                excerpt: "Tips and tricks for exploring Japan on a budget, from accommodation to transportation and food.",
+                image: "../assets/destinations/budget-japan.jpg",
+                link: "/blog/budget-travel-japan.html"
+            },
+            {
+                title: "Best Day Trips from Tokyo",
+                excerpt: "Discover amazing destinations within easy reach of Tokyo, from Mount Fuji to historic Kamakura.",
+                image: "../assets/destinations/mount-fuji.jpg",
+                link: "/blog/tokyo-day-trips.html"
+            },
+            {
+                title: "Onsen Guide: Japanese Hot Springs",
+                excerpt: "Everything you need to know about visiting Japanese hot springs, including etiquette and top locations.",
+                image: "../assets/destinations/onsen.jpg",
+                link: "/blog/onsen-guide.html"
+            },
+            {
+                title: "Japan Rail Pass: Is It Worth It?",
+                excerpt: "Calculate whether the JR Pass is worth it for your trip and learn how to make the most of it.",
+                image: "../assets/destinations/shinkansen.jpg",
+                link: "/blog/japan-rail-pass-guide.html"
+            }
+        ];
+
+        const POSTS_PER_PAGE = 9;
+        let currentPage = 1;
+
+        function displayPosts(page) {
+            const startIndex = (page - 1) * POSTS_PER_PAGE;
+            const endIndex = startIndex + POSTS_PER_PAGE;
+            const postsToShow = blogData.slice(startIndex, endIndex);
+            
+            const blogGrid = document.getElementById('blogGrid');
+            blogGrid.innerHTML = '';
+
+            postsToShow.forEach(post => {
+                const postElement = document.createElement('article');
+                postElement.className = 'blog-card';
+                postElement.innerHTML = `
+                    <img src="${post.image}" alt="${post.title}" class="blog-card-image">
+                    <div class="blog-card-content">
+                        <h2>${post.title}</h2>
+                        <p>${post.excerpt}</p>
+                        <a href="${post.link}" class="blog-card-link">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                `;
+                blogGrid.appendChild(postElement);
+            });
+
+            updatePaginationButtons();
+        }
+
+        function updatePaginationButtons() {
+            const prevButton = document.getElementById('prevPage');
+            const nextButton = document.getElementById('nextPage');
+            
+            prevButton.disabled = currentPage === 1;
+            nextButton.disabled = currentPage >= Math.ceil(blogData.length / POSTS_PER_PAGE);
+        }
+
+        function previousPage() {
+            if (currentPage > 1) {
+                currentPage--;
+                displayPosts(currentPage);
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+
+        function nextPage() {
+            if (currentPage < Math.ceil(blogData.length / POSTS_PER_PAGE)) {
+                currentPage++;
+                displayPosts(currentPage);
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+
+        // Initialize the page
+        displayPosts(currentPage);
+    </script>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 mt-12">
+        <div class="container mx-auto px-4">
+            <div class="text-center">
+                <p class="mb-4">© 2024 Akiko Adventures. All rights reserved.</p>
+                <p class="text-sm text-gray-400">
+                    <i class="fas fa-link mr-2"></i>
+                    This site contains affiliate links. We may earn a commission when you make a purchase through these links.
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html> 

@@ -39,6 +39,46 @@ const images = [
     {
         name: 'sydney.jpg',
         url: 'https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9'
+    },
+    {
+        name: 'london-hotel.jpg',
+        url: 'https://images.unsplash.com/photo-1578683010236-d716f9a3f461'
+    },
+    {
+        name: 'sydney-hotel.jpg',
+        url: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d'
+    },
+    {
+        name: 'kyoto.jpg',
+        url: 'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e'
+    },
+    {
+        name: 'street-food.jpg',
+        url: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836'
+    },
+    {
+        name: 'cherry-blossom.jpg',
+        url: 'https://images.unsplash.com/photo-1522383225653-ed111181a951'
+    },
+    {
+        name: 'budget-japan.jpg',
+        url: 'https://images.unsplash.com/photo-1480796927426-f609979314bd'
+    },
+    {
+        name: 'mount-fuji.jpg',
+        url: 'https://images.unsplash.com/photo-1490806843957-31f4c9a91c65'
+    },
+    {
+        name: 'onsen.jpg',
+        url: 'https://images.unsplash.com/photo-1545579133-99bb5ab189b0'
+    },
+    {
+        name: 'shinkansen.jpg',
+        url: 'https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d'
+    },
+    {
+        name: 'tokyo-hotel.jpg',
+        url: 'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb'
     }
 ];
 

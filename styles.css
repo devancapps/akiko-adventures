@@ -83,8 +83,24 @@ h2 {
 article {
   background: white;
   border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+article:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.blog-card-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.blog-card-content {
   padding: 1.5rem;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 article h3 {
@@ -94,18 +110,51 @@ article h3 {
 article h3 a {
   color: var(--primary-color);
   text-decoration: none;
+  font-weight: 600;
 }
 
 article h3 a:hover {
   text-decoration: underline;
 }
 
+article p {
+  color: var(--dark-gray);
+  margin: 0;
+  line-height: 1.5;
+}
+
 /* Widget Sections */
 #flight-deals, #hotel-deals {
-  background: white;
   padding: 2rem;
   border-radius: 0.5rem;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+#flight-deals {
+  background: url('./assets/destinations/paris.jpg') center/cover;
+  margin-bottom: 2rem;
+}
+
+#hotel-deals {
+  background: url('./assets/destinations/singapore.jpg') center/cover;
+}
+
+#flight-deals h2, #hotel-deals h2 {
+  position: relative;
+  z-index: 1;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+#flight-deals iframe, #hotel-deals iframe {
+  position: relative;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 1rem;
+  border-radius: 0.5rem;
 }
 
 #hotel-deals img {
