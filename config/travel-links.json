@@ -19,7 +19,7 @@
         "flights": {
           "primary": {
             "provider": "travelpayouts",
-            "widget_id": "1234",
+            "widget_id": "4043",
             "params": {
               "origin": "auto",
               "destination": "NRT",
@@ -27,8 +27,8 @@
             }
           },
           "fallback": {
-            "provider": "skyscanner",
-            "url": "https://www.skyscanner.com/transport/flights/nyca/tyoa/?associateID=YOUR_ID",
+            "provider": "trip",
+            "url": "https://www.trip.com/flights/tokyo-nrt/",
             "text": "Search flights to Tokyo"
           }
         }
@@ -53,7 +53,7 @@
         "flights": {
           "primary": {
             "provider": "travelpayouts",
-            "widget_id": "1234",
+            "widget_id": "4043",
             "params": {
               "origin": "auto",
               "destination": "LHR",
@@ -61,8 +61,8 @@
             }
           },
           "fallback": {
-            "provider": "skyscanner",
-            "url": "https://www.skyscanner.com/transport/flights/nyca/lond/?associateID=YOUR_ID",
+            "provider": "trip",
+            "url": "https://www.trip.com/flights/london-lhr/",
             "text": "Search flights to London"
           }
         }
@@ -75,20 +75,21 @@
         "provider": "travelpayouts",
         "base_url": "https://tp.media/content",
         "default_params": {
-          "promo_id": "1234",
+          "promo_id": "4043",
           "shmarker": "624965",
+          "campaign_id": "100",
           "locale": "en",
           "currency": "usd",
-          "powered_by": "true"
+          "powered_by": "true",
+          "searchUrl": "aviasales.com/search"
         }
       },
       "fallback": {
-        "provider": "skyscanner",
-        "base_url": "https://widgets.skyscanner.net/widget-server/widgets/iframe",
+        "provider": "trip",
+        "base_url": "https://www.trip.com/flights/search/",
         "default_params": {
-          "associateID": "YOUR_ID",
-          "currency": "USD",
-          "locale": "en-US"
+          "locale": "en-us",
+          "currency": "USD"
         }
       }
     },
