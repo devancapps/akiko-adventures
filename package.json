@@ -1,0 +1,11 @@
+{
+  "name": "akiko-adventures",
+  "version": "1.0.0",
+  "description": "Travel website with destination carousel",
+  "scripts": {
+    "download-images": "node scripts/download-images.js"
+  },
+  "dependencies": {
+    "sharp": "^0.33.2"
+  }
+} 

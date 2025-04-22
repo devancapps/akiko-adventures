@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Akiko Adventures – Travel Deals & Guides</title>
-    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="./styles.css">
+    <!-- Mailchimp Integration -->
+    <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/85f4a46b7d023c428aee2d18d/8ad37e3e21dde12ded2a15056.js");</script>
+    <!-- Analytics Script -->
     <script data-noptimize="1" data-cfasync="false" data-wpfc-render="false">
         (function () {
             var script = document.createElement("script");
@@ -61,126 +64,108 @@
             </script>
         </section>
 
-        <!-- Destination Deep Links Grid -->
-        <section id="popular-destinations" class="my-12">
-            <h2 class="text-2xl font-bold mb-6 px-4">Top Travel Deals by Destination</h2>
+        <!-- Destination Grid Section -->
+        <section id="destinations">
+            <h2>Top Travel Deals by Destination</h2>
             
-            <!-- Carousel Container -->
-            <div class="relative overflow-hidden">
-                <!-- Previous Button -->
-                <button onclick="slideCarousel(-1)" class="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-white/80 hover:bg-white p-2 rounded-r-lg shadow-md">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-                    </svg>
-                </button>
-
-                <!-- Carousel Track -->
-                <div id="carousel-track" class="flex gap-4 px-4 transition-transform duration-300 ease-in-out">
-                    <!-- London -->
-                    <a href="https://trip.tp.st/Xzg2aMan" class="destination-card flex-none w-72 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-                        <div class="relative h-48">
-                            <img src="/assets/destinations/london.jpg" alt="London" class="w-full h-full object-cover">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                            <div class="absolute bottom-4 left-4 text-white">
-                                <h3 class="text-xl font-bold">London</h3>
-                                <p class="text-sm">from New York</p>
-                            </div>
+            <div class="destinations-grid">
+                <!-- London -->
+                <a href="https://trip.tp.st/Xzg2aMan" class="destination-card">
+                    <div class="image-container">
+                        <img src="./assets/destinations/london.jpg" alt="London">
+                        <div class="overlay"></div>
+                        <div class="content">
+                            <h3>London</h3>
+                            <p>from New York</p>
                         </div>
-                    </a>
+                    </div>
+                </a>
 
-                    <!-- Bangkok -->
-                    <a href="https://trip.tp.st/Xzg2aMan" class="destination-card flex-none w-72 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-                        <div class="relative h-48">
-                            <img src="/assets/destinations/bangkok.jpg" alt="Bangkok" class="w-full h-full object-cover">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                            <div class="absolute bottom-4 left-4 text-white">
-                                <h3 class="text-xl font-bold">Bangkok</h3>
-                                <p class="text-sm">from San Francisco</p>
-                            </div>
+                <!-- Bangkok -->
+                <a href="https://trip.tp.st/Xzg2aMan" class="destination-card">
+                    <div class="image-container">
+                        <img src="./assets/destinations/bangkok.jpg" alt="Bangkok">
+                        <div class="overlay"></div>
+                        <div class="content">
+                            <h3>Bangkok</h3>
+                            <p>from San Francisco</p>
                         </div>
-                    </a>
+                    </div>
+                </a>
 
-                    <!-- Paris -->
-                    <a href="https://trip.tp.st/Xzg2aMan" class="destination-card flex-none w-72 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-                        <div class="relative h-48">
-                            <img src="/assets/destinations/paris.jpg" alt="Paris" class="w-full h-full object-cover">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                            <div class="absolute bottom-4 left-4 text-white">
-                                <h3 class="text-xl font-bold">Paris</h3>
-                                <p class="text-sm">from Los Angeles</p>
-                            </div>
+                <!-- Paris -->
+                <a href="https://trip.tp.st/Xzg2aMan" class="destination-card">
+                    <div class="image-container">
+                        <img src="./assets/destinations/paris.jpg" alt="Paris">
+                        <div class="overlay"></div>
+                        <div class="content">
+                            <h3>Paris</h3>
+                            <p>from Los Angeles</p>
                         </div>
-                    </a>
+                    </div>
+                </a>
 
-                    <!-- Tokyo -->
-                    <a href="https://trip.tp.st/Xzg2aMan" class="destination-card flex-none w-72 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-                        <div class="relative h-48">
-                            <img src="/assets/destinations/tokyo.jpg" alt="Tokyo" class="w-full h-full object-cover">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                            <div class="absolute bottom-4 left-4 text-white">
-                                <h3 class="text-xl font-bold">Tokyo</h3>
-                                <p class="text-sm">from San Francisco</p>
-                            </div>
+                <!-- Tokyo -->
+                <a href="https://trip.tp.st/Xzg2aMan" class="destination-card">
+                    <div class="image-container">
+                        <img src="./assets/destinations/tokyo.jpg" alt="Tokyo">
+                        <div class="overlay"></div>
+                        <div class="content">
+                            <h3>Tokyo</h3>
+                            <p>from San Francisco</p>
                         </div>
-                    </a>
+                    </div>
+                </a>
 
-                    <!-- Seoul -->
-                    <a href="https://trip.tp.st/Xzg2aMan" class="destination-card flex-none w-72 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-                        <div class="relative h-48">
-                            <img src="/assets/destinations/seoul.jpg" alt="Seoul" class="w-full h-full object-cover">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                            <div class="absolute bottom-4 left-4 text-white">
-                                <h3 class="text-xl font-bold">Seoul</h3>
-                                <p class="text-sm">from Seattle</p>
-                            </div>
+                <!-- Seoul -->
+                <a href="https://trip.tp.st/Xzg2aMan" class="destination-card">
+                    <div class="image-container">
+                        <img src="./assets/destinations/seoul.jpg" alt="Seoul">
+                        <div class="overlay"></div>
+                        <div class="content">
+                            <h3>Seoul</h3>
+                            <p>from Seattle</p>
                         </div>
-                    </a>
-                </div>
+                    </div>
+                </a>
 
-                <!-- Next Button -->
-                <button onclick="slideCarousel(1)" class="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-white/80 hover:bg-white p-2 rounded-l-lg shadow-md">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                    </svg>
-                </button>
-            </div>
+                <!-- Dubai -->
+                <a href="https://trip.tp.st/Xzg2aMan" class="destination-card">
+                    <div class="image-container">
+                        <img src="./assets/destinations/dubai.jpg" alt="Dubai">
+                        <div class="overlay"></div>
+                        <div class="content">
+                            <h3>Dubai</h3>
+                            <p>from Chicago</p>
+                        </div>
+                    </div>
+                </a>
 
-            <!-- Carousel Navigation Dots -->
-            <div class="flex justify-center gap-2 mt-4">
-                <button onclick="goToSlide(0)" class="w-2 h-2 rounded-full bg-blue-600"></button>
-                <button onclick="goToSlide(1)" class="w-2 h-2 rounded-full bg-gray-300"></button>
-                <button onclick="goToSlide(2)" class="w-2 h-2 rounded-full bg-gray-300"></button>
+                <!-- Singapore -->
+                <a href="https://trip.tp.st/Xzg2aMan" class="destination-card">
+                    <div class="image-container">
+                        <img src="./assets/destinations/singapore.jpg" alt="Singapore">
+                        <div class="overlay"></div>
+                        <div class="content">
+                            <h3>Singapore</h3>
+                            <p>from Los Angeles</p>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Sydney -->
+                <a href="https://trip.tp.st/Xzg2aMan" class="destination-card">
+                    <div class="image-container">
+                        <img src="./assets/destinations/sydney.jpg" alt="Sydney">
+                        <div class="overlay"></div>
+                        <div class="content">
+                            <h3>Sydney</h3>
+                            <p>from San Francisco</p>
+                        </div>
+                    </div>
+                </a>
             </div>
         </section>
-
-        <script>
-            let currentSlide = 0;
-            const track = document.getElementById('carousel-track');
-            const cards = document.querySelectorAll('.destination-card');
-            const cardWidth = 288; // 272px card + 16px gap
-            const maxSlide = Math.ceil(cards.length / 3) - 1;
-
-            function slideCarousel(direction) {
-                currentSlide = Math.max(0, Math.min(maxSlide, currentSlide + direction));
-                updateCarousel();
-            }
-
-            function goToSlide(slideIndex) {
-                currentSlide = slideIndex;
-                updateCarousel();
-            }
-
-            function updateCarousel() {
-                const offset = -currentSlide * (cardWidth * 3);
-                track.style.transform = `translateX(${offset}px)`;
-                
-                // Update dots
-                document.querySelectorAll('#popular-destinations .flex.justify-center button').forEach((dot, index) => {
-                    dot.classList.toggle('bg-blue-600', index === currentSlide);
-                    dot.classList.toggle('bg-gray-300', index !== currentSlide);
-                });
-            }
-        </script>
 
         <!-- Email Subscription Section -->
         <section id="subscribe">

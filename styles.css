@@ -116,6 +116,18 @@ article h3 a:hover {
 }
 
 /* Popular Destinations */
+#popular-destinations {
+  margin: 3rem 0;
+  padding: 0 1rem;
+}
+
+#popular-destinations h2 {
+  font-size: 1.875rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  padding: 0 1rem;
+}
+
 #popular-destinations ul {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -187,22 +199,109 @@ footer {
   margin-top: 3rem;
 }
 
-/* Responsive Design */
+/* Destinations Grid */
+#destinations {
+  margin: 2rem auto;
+  max-width: 1200px;
+  padding: 0 1rem;
+}
+
+.destinations-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  padding: 0;
+}
+
+.destination-card {
+  position: relative;
+  display: block;
+  text-decoration: none;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+  aspect-ratio: 4/3;
+  background-color: #f8f9fa;
+}
+
+.destination-card:hover {
+  transform: translateY(-2px);
+}
+
+.destination-card .image-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, 
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.2) 50%,
+    rgba(0, 0, 0, 0.7) 100%);
+}
+
+.destination-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.9);
+}
+
+.destination-card .overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, 
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.4) 50%,
+    rgba(0, 0, 0, 0.8) 100%);
+}
+
+.destination-card .content {
+  position: absolute;
+  bottom: 1.25rem;
+  left: 1.25rem;
+  color: white;
+  z-index: 1;
+}
+
+.destination-card h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+  letter-spacing: -0.01em;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.destination-card p {
+  font-size: 0.875rem;
+  margin: 0.25rem 0 0;
+  opacity: 0.9;
+  font-weight: 400;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .destinations-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 @media (max-width: 768px) {
-  header h1 {
-    font-size: 2rem;
+  .destinations-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
   }
   
-  nav {
-    flex-direction: column;
-    gap: 0.5rem;
+  .destination-card h3 {
+    font-size: 1.25rem;
   }
   
-  #subscribe form {
-    flex-direction: column;
+  .destination-card p {
+    font-size: 0.75rem;
   }
-  
-  #subscribe button {
-    width: 100%;
+}
+
+@media (max-width: 480px) {
+  .destinations-grid {
+    grid-template-columns: 1fr;
   }
 } 
