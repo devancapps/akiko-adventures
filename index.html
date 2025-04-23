@@ -8,50 +8,114 @@
     <link rel="stylesheet" href="./blog/blog-styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
-    <!-- Mailchimp Integration -->
-    <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
     <style type="text/css">
         #mc_embed_signup {
             background: #fff;
-            clear: left;
-            font: 14px Inter, Helvetica, Arial, sans-serif;
             max-width: 600px;
             width: 100%;
             margin: 0 auto;
             padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        #mc_embed_signup h2 {
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
             font-family: Inter, sans-serif;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: #333;
         }
-        #mc_embed_signup .mc-field-group {
-            margin-bottom: 1rem;
+
+        #mc_embed_signup form {
+            padding: 0;
+            margin: 0;
         }
-        #mc_embed_signup .button {
-            background-color: #2681ff;
-            color: white;
-            border: none;
-            padding: 0.75rem 1.5rem;
-            border-radius: 4px;
-            font-weight: 500;
-            cursor: pointer;
-            transition: background-color 0.2s;
+
+        #mc_embed_signup h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin: 0 0 1.5rem 0;
+            color: #1a1a1a;
+            text-align: center;
         }
-        #mc_embed_signup .button:hover {
-            background-color: #1a6fd9;
-        }
-        #mc_embed_signup .asterisk {
-            color: #2681ff;
-        }
+
         #mc_embed_signup .indicates-required {
+            text-align: right;
             margin-bottom: 1rem;
             font-size: 0.9rem;
             color: #666;
         }
+
+        #mc_embed_signup .asterisk {
+            color: #2681ff;
+        }
+
+        #mc_embed_signup .mc-field-group {
+            margin-bottom: 1.5rem;
+            padding: 0;
+            min-height: auto;
+        }
+
+        #mc_embed_signup .mc-field-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            font-size: 1rem;
+            color: #374151;
+        }
+
+        #mc_embed_signup .mc-field-group input {
+            width: 100%;
+            padding: 1rem 1.25rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 1rem;
+            background: #f8fafc;
+            box-sizing: border-box;
+            height: auto;
+        }
+
+        #mc_embed_signup .mc-field-group input:focus {
+            border-color: #2681ff;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(38, 129, 255, 0.1);
+            background: white;
+        }
+
+        #mc_embed_signup .button {
+            display: block;
+            width: 100%;
+            background: linear-gradient(135deg, #2681ff, #7c3aed);
+            color: white;
+            border: none;
+            padding: 1rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 1rem 0;
+            box-shadow: 0 4px 12px rgba(38, 129, 255, 0.3);
+        }
+
+        #mc_embed_signup .button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(38, 129, 255, 0.4);
+            background: linear-gradient(135deg, #1a6fd9, #6025ea);
+        }
+
+        #mc_embed_signup div.response {
+            margin: 0 0 1rem 0;
+            padding: 0.5rem;
+            font-weight: 500;
+            font-size: 0.9rem;
+            border-radius: 6px;
+        }
+
+        #mc_embed_signup div#mce-success-response {
+            background: #ecfdf5;
+            color: #065f46;
+        }
+
+        #mc_embed_signup div#mce-error-response {
+            background: #fef2f2;
+            color: #991b1b;
+        }
+
         @media (max-width: 768px) {
             #mc_embed_signup {
                 padding: 1.5rem;
@@ -70,14 +134,20 @@
     </script>
 </head>
 <body>
+    <nav class="site-nav">
+        <div class="nav-container">
+            <a href="/" class="logo">Akiko Adventures</a>
+            <div class="nav-links">
+                <a href="/" class="active">Home</a>
+                <a href="/blog/index.html">Blog</a>
+                <a href="/resources/index.html">Resources</a>
+            </div>
+        </div>
+    </nav>
+
     <header>
         <h1>Akiko Adventures</h1>
         <p>Your gateway to cheap flights, dreamy hotels, and curated travel guides.</p>
-        <nav>
-            <a href="/" class="active">Home</a>
-            <a href="/blog/index.html">Blog</a>
-            <a href="/resources/index.html">Resources</a>
-        </nav>
     </header>
 
     <main>

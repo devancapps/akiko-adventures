@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{title} - Akiko Adventures</title>
+    <meta name="description" content="{description}">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="{title} - Akiko Adventures">
+    <meta property="og:description" content="{description}">
+    <meta property="og:image" content="https://akiko-adventures.web.app/assets/{slug}.jpg">
+    <meta property="og:url" content="https://akiko-adventures.web.app/blog/{slug}.html">
+    <meta property="og:type" content="article">
+    
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{title} - Akiko Adventures">
+    <meta name="twitter:description" content="{description}">
+    <meta name="twitter:image" content="https://akiko-adventures.web.app/assets/{slug}.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://akiko-adventures.web.app/blog/{slug}.html">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="./blog-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "{title}",
+        "image": "https://akiko-adventures.web.app/assets/{slug}.jpg",
+        "datePublished": "{date}",
+        "dateModified": "{date}",
+        "author": {
+            "@type": "Organization",
+            "name": "Akiko Adventures"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Akiko Adventures",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://akiko-adventures.web.app/assets/logo.png"
+            }
+        },
+        "description": "{description}",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://akiko-adventures.web.app/blog/{slug}.html"
+        }
+    }
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="site-nav">
+        <div class="nav-container">
+            <a href="/" class="logo">Akiko Adventures</a>
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="/blog/index.html" class="active">Blog</a>
+                <a href="/resources/index.html">Resources</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="blog-hero">
+        <img src="../assets/{slug}.jpg" alt="{image_alt}" class="blog-hero-image">
+        <div class="blog-hero-content">
+            <div class="container mx-auto px-4">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">{title}</h1>
+                <div class="blog-meta">
+                    <span><i class="far fa-calendar-alt mr-2"></i>{date}</span>
+                    <span><i class="far fa-clock mr-2"></i>{read_time} min read</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        <article class="max-w-3xl mx-auto">
+            <!-- Flight Search Widget -->
+            <div class="flight-widget">
+                <h2 class="widget-title">
+                    <i class="fas fa-plane mr-2"></i>Find Flights to {destination}
+                </h2>
+                <script 
+                    async 
+                    src="https://tp.media/content?trs=409664&shmarker=624965&locale=en&curr=USD&powered_by=true&border_radius=0&plain=true&color_button=%232681ff&color_button_text=%23ffffff&color_border=%232681ff&promo_id=4132&campaign_id=121" 
+                    charset="utf-8">
+                </script>
+            </div>
+
+            <!-- Content -->
+            <div class="prose">
+                {content}
+            </div>
+
+            <!-- Hotel Widget -->
+            <div class="hotel-widget">
+                <h3 class="widget-title">
+                    <i class="fas fa-bed mr-2"></i>Find Hotels in {destination}
+                </h3>
+                <script 
+                    async 
+                    src="https://c121.travelpayouts.com/content?trs=409664&shmarker=624965&lang=www&layout=S10391&powered_by=true&promo_id=4038" 
+                    charset="utf-8">
+                </script>
+            </div>
+
+            <!-- Newsletter Subscription -->
+            <div id="mc_embed_signup">
+                <form action="https://app.us4.list-manage.com/subscribe/post?u=85f4a46b7d023c428aee2d18d&amp;id=bae80b85b8&amp;f_id=00c367e8f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
+                    <div id="mc_embed_signup_scroll">
+                        <h2>Get Travel Updates</h2>
+                        <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
+                        <div class="mc-field-group">
+                            <label for="mce-EMAIL">Email Address <span class="asterisk">*</span></label>
+                            <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required value="">
+                        </div>
+                        <div id="mce-responses" class="clear">
+                            <div class="response" id="mce-error-response" style="display: none;"></div>
+                            <div class="response" id="mce-success-response" style="display: none;"></div>
+                        </div>
+                        <div aria-hidden="true" style="position: absolute; left: -5000px;">
+                            <input type="text" name="b_85f4a46b7d023c428aee2d18d_bae80b85b8" tabindex="-1" value="">
+                        </div>
+                        <div class="clear">
+                            <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button" value="Subscribe">
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Affiliate Notice -->
+            <div class="affiliate-notice">
+                <p>
+                    <i class="fas fa-info-circle mr-2"></i>
+                    <strong>Affiliate Disclosure:</strong> This article contains affiliate links. If you make a booking through these links, we may earn a commission at no extra cost to you. This helps us continue providing valuable travel content.
+                </p>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <p>© 2025 Akiko Adventures. Travel smarter. Affiliate disclosure: We may earn from qualifying purchases.</p>
+    </footer>
+</body>
+</html> 

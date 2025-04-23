@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Essential travel resources and tools for planning your next adventure. Find the best credit cards, booking platforms, and travel apps.">
     <title>Travel Resources - Akiko Adventures</title>
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
     
@@ -27,6 +27,7 @@
             transition: transform 0.2s ease, box-shadow 0.2s ease;
             display: flex;
             flex-direction: column;
+            height: 100%;
         }
 
         .resource-card:hover {
@@ -36,8 +37,9 @@
 
         .resource-card-image {
             width: 100%;
-            height: 160px;
+            height: 200px;
             object-fit: cover;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
         }
 
         .resource-card-content {
@@ -45,80 +47,108 @@
             flex-grow: 1;
             display: flex;
             flex-direction: column;
+            background: white;
         }
 
         .resource-card h2 {
             font-size: 1.25rem;
             font-weight: 600;
             margin-bottom: 0.75rem;
-            color: var(--text-color);
+            color: #333;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .resource-card h2 i {
+            color: #2681ff;
         }
 
         .resource-card p {
-            color: var(--dark-gray);
+            color: #666;
             margin-bottom: 1.5rem;
             line-height: 1.6;
             flex-grow: 1;
         }
 
         .resource-card-link {
-            color: var(--primary-color);
+            color: #2681ff;
             text-decoration: none;
             font-weight: 500;
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
             margin-top: auto;
+            padding: 0.5rem 0;
+            transition: all 0.2s ease;
         }
 
         .resource-card-link:hover {
-            color: var(--secondary-color);
+            color: #1a6fd9;
+            gap: 0.75rem;
         }
 
-        .page-header {
-            text-align: center;
-            padding: 4rem 2rem;
-            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+        header {
+            background: linear-gradient(135deg, #2563eb, #7c3aed);
             color: white;
+            padding: 4rem 2rem;
+            text-align: center;
             margin-bottom: 2rem;
         }
 
-        .page-header h1 {
+        header h1 {
             font-size: 2.5rem;
             font-weight: 700;
             margin-bottom: 1rem;
         }
 
-        .page-header p {
+        header p {
             opacity: 0.9;
             max-width: 600px;
             margin: 0 auto;
+            font-size: 1.2rem;
+        }
+
+        @media (max-width: 768px) {
+            .resources-grid {
+                grid-template-columns: 1fr;
+                padding: 1rem;
+            }
+
+            header {
+                padding: 3rem 1rem;
+            }
+
+            header h1 {
+                font-size: 2rem;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="blog-nav">
-        <div class="container mx-auto px-4 py-4">
-            <a href="/">Home</a>
-            <a href="/blog/index.html">Blog</a>
-            <a href="/resources/index.html" class="active">Resources</a>
+    <nav class="site-nav">
+        <div class="nav-container">
+            <a href="/" class="logo">Akiko Adventures</a>
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="/blog/index.html">Blog</a>
+                <a href="/resources/index.html" class="active">Resources</a>
+            </div>
         </div>
     </nav>
 
-    <!-- Page Header -->
-    <header class="page-header">
+    <header>
         <h1>Travel Resources</h1>
-        <p>Essential tools and services to help plan your perfect trip</p>
+        <p>Essential tools and services for planning your perfect trip</p>
     </header>
 
     <!-- Resources Grid -->
     <div class="resources-grid">
         <!-- Credit Cards -->
         <div class="resource-card">
-            <img src="./assets/resources/credit-cards.jpg" alt="Travel Credit Cards" class="resource-card-image">
+            <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&auto=format&fit=crop&q=80" alt="Travel Credit Cards" class="resource-card-image">
             <div class="resource-card-content">
-                <h2><i class="fas fa-credit-card mr-2"></i>Best Travel Credit Cards</h2>
+                <h2><i class="fas fa-credit-card"></i>Best Travel Credit Cards</h2>
                 <p>Compare top travel rewards cards with sign-up bonuses, points multipliers, and travel perks.</p>
                 <a href="https://www.nerdwallet.com/best/credit-cards/travel" class="resource-card-link" target="_blank">
                     Compare Cards <i class="fas fa-arrow-right"></i>
@@ -128,9 +158,9 @@
 
         <!-- Airbnb -->
         <div class="resource-card">
-            <img src="./assets/resources/airbnb.jpg" alt="Airbnb Rentals" class="resource-card-image">
+            <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800&auto=format&fit=crop&q=80" alt="Airbnb Rentals" class="resource-card-image">
             <div class="resource-card-content">
-                <h2><i class="fas fa-home mr-2"></i>Airbnb</h2>
+                <h2><i class="fas fa-home"></i>Airbnb</h2>
                 <p>Find unique stays and experiences worldwide. Perfect for authentic local experiences.</p>
                 <a href="https://www.airbnb.com" class="resource-card-link" target="_blank">
                     Find Stays <i class="fas fa-arrow-right"></i>
@@ -140,9 +170,9 @@
 
         <!-- Hopper -->
         <div class="resource-card">
-            <img src="./assets/resources/hopper.jpg" alt="Hopper App" class="resource-card-image">
+            <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=800&auto=format&fit=crop&q=80" alt="Flight Booking App" class="resource-card-image">
             <div class="resource-card-content">
-                <h2><i class="fas fa-plane mr-2"></i>Hopper</h2>
+                <h2><i class="fas fa-plane"></i>Hopper</h2>
                 <p>Track flight prices and get predictions on the best time to book your tickets.</p>
                 <a href="https://www.hopper.com" class="resource-card-link" target="_blank">
                     Download App <i class="fas fa-arrow-right"></i>
@@ -152,9 +182,9 @@
 
         <!-- Google Flights -->
         <div class="resource-card">
-            <img src="./assets/resources/google-flights.jpg" alt="Google Flights" class="resource-card-image">
+            <img src="https://images.unsplash.com/photo-1569154941061-e231b4725ef1?w=800&auto=format&fit=crop&q=80" alt="Flight Search" class="resource-card-image">
             <div class="resource-card-content">
-                <h2><i class="fas fa-search mr-2"></i>Google Flights</h2>
+                <h2><i class="fas fa-search"></i>Google Flights</h2>
                 <p>Compare flights across airlines with flexible dates and price tracking.</p>
                 <a href="https://www.google.com/travel/flights" class="resource-card-link" target="_blank">
                     Search Flights <i class="fas fa-arrow-right"></i>
@@ -164,9 +194,9 @@
 
         <!-- Wise -->
         <div class="resource-card">
-            <img src="./assets/resources/wise.jpg" alt="Wise Money Transfer" class="resource-card-image">
+            <img src="https://images.unsplash.com/photo-1580048915913-4f8f5cb481c4?w=800&auto=format&fit=crop&q=80" alt="Money Transfer" class="resource-card-image">
             <div class="resource-card-content">
-                <h2><i class="fas fa-exchange-alt mr-2"></i>Wise</h2>
+                <h2><i class="fas fa-exchange-alt"></i>Wise</h2>
                 <p>Send and receive money internationally with low fees and great exchange rates.</p>
                 <a href="https://wise.com" class="resource-card-link" target="_blank">
                     Learn More <i class="fas fa-arrow-right"></i>
@@ -176,9 +206,9 @@
 
         <!-- Travel Insurance -->
         <div class="resource-card">
-            <img src="./assets/resources/insurance.jpg" alt="Travel Insurance" class="resource-card-image">
+            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&auto=format&fit=crop&q=80" alt="Travel Insurance" class="resource-card-image">
             <div class="resource-card-content">
-                <h2><i class="fas fa-shield-alt mr-2"></i>World Nomads</h2>
+                <h2><i class="fas fa-shield-alt"></i>World Nomads</h2>
                 <p>Comprehensive travel insurance for adventurous travelers worldwide.</p>
                 <a href="https://www.worldnomads.com" class="resource-card-link" target="_blank">
                     Get Quote <i class="fas fa-arrow-right"></i>
@@ -188,9 +218,9 @@
 
         <!-- Google Maps -->
         <div class="resource-card">
-            <img src="./assets/resources/maps.jpg" alt="Google Maps" class="resource-card-image">
+            <img src="https://images.unsplash.com/photo-1569336415962-a4bd9f69cd83?w=800&auto=format&fit=crop&q=80" alt="Travel Planning" class="resource-card-image">
             <div class="resource-card-content">
-                <h2><i class="fas fa-map-marked-alt mr-2"></i>Google Maps</h2>
+                <h2><i class="fas fa-map-marked-alt"></i>Google Maps</h2>
                 <p>Plan your routes, save locations, and download offline maps for your trips.</p>
                 <a href="https://www.google.com/maps" class="resource-card-link" target="_blank">
                     Open Maps <i class="fas fa-arrow-right"></i>
@@ -200,9 +230,9 @@
 
         <!-- Rome2Rio -->
         <div class="resource-card">
-            <img src="./assets/resources/rome2rio.jpg" alt="Rome2Rio" class="resource-card-image">
+            <img src="https://images.unsplash.com/photo-1530521954074-e64f6810b32d?w=800&auto=format&fit=crop&q=80" alt="Transportation Planning" class="resource-card-image">
             <div class="resource-card-content">
-                <h2><i class="fas fa-route mr-2"></i>Rome2Rio</h2>
+                <h2><i class="fas fa-route"></i>Rome2Rio</h2>
                 <p>Find the best way to get anywhere by plane, train, bus, ferry & automobile.</p>
                 <a href="https://www.rome2rio.com" class="resource-card-link" target="_blank">
                     Plan Route <i class="fas fa-arrow-right"></i>
@@ -212,9 +242,9 @@
 
         <!-- Google Translate -->
         <div class="resource-card">
-            <img src="./assets/resources/translate.jpg" alt="Google Translate" class="resource-card-image">
+            <img src="https://images.unsplash.com/photo-1456081445129-830eb8d4bfc6?w=800&auto=format&fit=crop&q=80" alt="Language Translation" class="resource-card-image">
             <div class="resource-card-content">
-                <h2><i class="fas fa-language mr-2"></i>Google Translate</h2>
+                <h2><i class="fas fa-language"></i>Google Translate</h2>
                 <p>Break language barriers with offline translation and camera translation.</p>
                 <a href="https://translate.google.com" class="resource-card-link" target="_blank">
                     Translate Now <i class="fas fa-arrow-right"></i>
@@ -224,15 +254,13 @@
     </div>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-8 mt-12">
-        <div class="container mx-auto px-4">
-            <div class="text-center">
-                <p class="mb-4">© 2024 Akiko Adventures. All rights reserved.</p>
-                <p class="text-sm text-gray-400">
-                    <i class="fas fa-link mr-2"></i>
-                    This site contains affiliate links. We may earn a commission when you make a purchase through these links.
-                </p>
-            </div>
+    <footer>
+        <div class="container">
+            <p>© 2024 Akiko Adventures. All rights reserved.</p>
+            <p class="affiliate-disclaimer">
+                <i class="fas fa-link"></i>
+                This site contains affiliate links. We may earn a commission when you make a purchase through these links.
+            </p>
         </div>
     </footer>
 </body>

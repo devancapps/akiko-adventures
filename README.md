@@ -1,57 +1,81 @@
-# Akiko Adventures - Travel Affiliate Site
+# Akiko Adventures
 
-A responsive travel affiliate website featuring flight and hotel deals, powered by Skyscanner and Booking.com.
+A modern travel affiliate website built with React, TypeScript, and Tailwind CSS.
 
 ## Features
 
-- Responsive design with modern UI
-- Skyscanner flight search widget
-- Booking.com hotel widget
-- Blog posts with affiliate links
-- Email subscription form
-- Popular routes grid
-- Firebase hosting ready
+- Modern React application with TypeScript
+- Responsive design with Tailwind CSS
+- Client-side routing with React Router
+- Lazy-loaded components for better performance
+- SEO-friendly structure
+- Integration with travel affiliate APIs (Skyscanner, Booking.com)
 
-## Setup
+## Prerequisites
 
-1. Replace affiliate IDs:
-   - Replace `YOUR_ID` in `index.html` with your Skyscanner affiliate ID
-   - Replace `YOUR_ID` in `index.html` with your Booking.com affiliate ID
-   - Update email subscription form endpoint in `index.html`
+- Node.js (v16 or higher)
+- npm (v7 or higher)
 
-2. Add your own images:
-   - Replace `/assets/tokyo-hotel-preview.jpg` with your preferred image
-   - Add images for blog posts
+## Getting Started
 
-## Deployment
-
-1. Install Firebase CLI:
+1. Clone the repository:
    ```bash
-   npm install -g firebase-tools
+   git clone https://github.com/yourusername/akiko-adventures.git
+   cd akiko-adventures
    ```
 
-2. Login to Firebase:
+2. Install dependencies:
    ```bash
-   firebase login
+   npm install
    ```
 
-3. Initialize Firebase project:
+3. Create a `.env` file based on `.env.example` and fill in your API keys:
    ```bash
-   firebase init
+   cp .env.example .env
    ```
 
-4. Deploy to Firebase:
+4. Start the development server:
    ```bash
-   firebase deploy
+   npm run dev
    ```
 
-## Customization
+5. Build for production:
+   ```bash
+   npm run build
+   ```
 
-- Update colors in `styles.css` by modifying the CSS variables in `:root`
-- Add more blog posts in the `/blog` directory
-- Update popular routes in `index.html`
-- Modify email subscription form endpoint
+## Project Structure
+
+```
+src/
+├── assets/           # Static assets (images, icons)
+├── components/       # Reusable UI components
+├── layouts/          # Layout components (Header, Footer)
+├── pages/            # Page components (Home, Blog)
+├── routes/           # Route definitions
+├── services/         # API service modules
+├── utils/            # Utility functions
+├── hooks/            # Custom React hooks
+├── types/            # TypeScript type definitions
+├── App.tsx           # Root component
+└── main.tsx          # Entry point
+```
+
+## Development
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run lint` - Run ESLint
+- `npm run format` - Format code with Prettier
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
 ## License
 
-MIT License 
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details. 

@@ -64,4 +64,7 @@ Thumbs.db
 credentials.json
 *_rsa
 *_dsa
-*.pub 
+*.pub
+
+# New code block
+config/firebase-service-account.json 
