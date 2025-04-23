@@ -3,184 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Explore travel guides, tips, and destination reviews from Akiko Adventures. Find the best advice for your next trip to Japan and beyond.">
     <title>Travel Blog - Akiko Adventures</title>
+    <meta name="description" content="Explore travel stories, guides, and adventures from around the world.">
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="./blog-styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
 </head>
 <body>
-    <nav class="site-nav">
-        <div class="nav-container">
-            <a href="/" class="logo">Akiko Adventures</a>
-            <div class="nav-links">
+    <header class="site-header">
+        <div class="container">
+            <nav class="site-nav">
                 <a href="/">Home</a>
-                <a href="/blog/index.html" class="active">Blog</a>
-                <a href="/resources/index.html">Resources</a>
-            </div>
+                <a href="/blog" class="active">Blog</a>
+                <a href="/about">About</a>
+                <a href="/resources">Resources</a>
+            </nav>
         </div>
-    </nav>
-
-    <!-- Page Header -->
-    <header class="page-header">
-        <h1>Travel Blog</h1>
-        <p>Discover travel guides, tips, and destination reviews to help plan your next adventure</p>
     </header>
 
-    <!-- Blog Grid -->
-    <div class="blog-grid" id="blogGrid"></div>
+    <main class="blog-container">
+        <div class="blog-posts">
+            <!-- Blog posts will be inserted here -->
+        </div>
+    </main>
 
-    <!-- Pagination -->
-    <div class="pagination" id="pagination">
-        <button id="prevPage" onclick="previousPage()">
-            <i class="fas fa-chevron-left"></i> Previous
-        </button>
-        <button id="nextPage" onclick="nextPage()">
-            Next <i class="fas fa-chevron-right"></i>
-        </button>
-    </div>
-
-    <!-- Blog Data and Pagination Logic -->
-    <script>
-        const blogData = [
-            {
-                title: "Where to Stay in London – Complete 2024 Guide",
-                excerpt: "Discover the best areas to stay in London, from budget-friendly neighborhoods to luxury districts. Find your perfect accommodation in the British capital.",
-                image: "../assets/destinations/london-hotel.jpg",
-                link: "/blog/where-to-stay-in-london.html"
-            },
-            {
-                title: "Where to Stay in Sydney – Best Areas & Hotels 2024",
-                excerpt: "From beachside suburbs to the bustling CBD, find the perfect place to stay in Sydney. Compare neighborhoods and accommodations for every budget.",
-                image: "../assets/destinations/sydney-hotel.jpg",
-                link: "/blog/where-to-stay-in-sydney.html"
-            },
-            {
-                title: "How to Fly to Japan for Under $500",
-                excerpt: "Discover the cheapest months, airlines, and routes to Tokyo. Learn insider tips for finding budget flights and making your dream trip affordable.",
-                image: "../assets/destinations/tokyo.jpg",
-                link: "/blog/fly-to-japan-under-500.html"
-            },
-            {
-                title: "Where to Stay in Tokyo – Best Hotels in 2024",
-                excerpt: "Compare Tokyo hotels under $100. Find the perfect neighborhood and accommodation for your budget in Japan's exciting capital.",
-                image: "../assets/destinations/tokyo-hotel.jpg",
-                link: "/blog/where-to-stay-in-tokyo.html"
-            },
-            {
-                title: "10 Hidden Gems in Kyoto's Ancient Streets",
-                excerpt: "Explore secret temples, traditional tea houses, and local markets away from the tourist crowds in Japan's cultural capital.",
-                image: "../assets/destinations/kyoto.jpg",
-                link: "/blog/hidden-gems-kyoto.html"
-            },
-            {
-                title: "Ultimate Guide to Japanese Street Food",
-                excerpt: "From takoyaki to ramen, discover the best street food spots and must-try dishes across Japan's major cities.",
-                image: "../assets/destinations/street-food.jpg",
-                link: "/blog/japanese-street-food-guide.html"
-            },
-            {
-                title: "Cherry Blossom Season: When and Where to Go",
-                excerpt: "Plan your perfect hanami experience with our comprehensive guide to cherry blossom viewing in Japan.",
-                image: "../assets/destinations/cherry-blossom.jpg",
-                link: "/blog/cherry-blossom-guide.html"
-            },
-            {
-                title: "Budget Travel in Japan: Complete Guide",
-                excerpt: "Tips and tricks for exploring Japan on a budget, from accommodation to transportation and food.",
-                image: "../assets/destinations/budget-japan.jpg",
-                link: "/blog/budget-travel-japan.html"
-            },
-            {
-                title: "Best Day Trips from Tokyo",
-                excerpt: "Discover amazing destinations within easy reach of Tokyo, from Mount Fuji to historic Kamakura.",
-                image: "../assets/destinations/mount-fuji.jpg",
-                link: "/blog/tokyo-day-trips.html"
-            },
-            {
-                title: "Onsen Guide: Japanese Hot Springs",
-                excerpt: "Everything you need to know about visiting Japanese hot springs, including etiquette and top locations.",
-                image: "../assets/destinations/onsen.jpg",
-                link: "/blog/onsen-guide.html"
-            },
-            {
-                title: "Japan Rail Pass: Is It Worth It?",
-                excerpt: "Calculate whether the JR Pass is worth it for your trip and learn how to make the most of it.",
-                image: "../assets/destinations/shinkansen.jpg",
-                link: "/blog/japan-rail-pass-guide.html"
-            }
-        ];
-
-        const POSTS_PER_PAGE = 9;
-        let currentPage = 1;
-
-        function displayPosts(page) {
-            const startIndex = (page - 1) * POSTS_PER_PAGE;
-            const endIndex = startIndex + POSTS_PER_PAGE;
-            const postsToShow = blogData.slice(startIndex, endIndex);
-            
-            const blogGrid = document.getElementById('blogGrid');
-            blogGrid.innerHTML = '';
-
-            postsToShow.forEach(post => {
-                const postElement = document.createElement('article');
-                postElement.className = 'blog-card';
-                postElement.innerHTML = `
-                    <img src="${post.image}" alt="${post.title}" class="blog-card-image">
-                    <div class="blog-card-content">
-                        <h2>${post.title}</h2>
-                        <p>${post.excerpt}</p>
-                        <a href="${post.link}" class="blog-card-link">
-                            Read More <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </div>
-                `;
-                blogGrid.appendChild(postElement);
-            });
-
-            updatePaginationButtons();
-        }
-
-        function updatePaginationButtons() {
-            const prevButton = document.getElementById('prevPage');
-            const nextButton = document.getElementById('nextPage');
-            
-            prevButton.disabled = currentPage === 1;
-            nextButton.disabled = currentPage >= Math.ceil(blogData.length / POSTS_PER_PAGE);
-        }
-
-        function previousPage() {
-            if (currentPage > 1) {
-                currentPage--;
-                displayPosts(currentPage);
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            }
-        }
-
-        function nextPage() {
-            if (currentPage < Math.ceil(blogData.length / POSTS_PER_PAGE)) {
-                currentPage++;
-                displayPosts(currentPage);
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            }
-        }
-
-        // Initialize the page
-        displayPosts(currentPage);
-    </script>
-
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-8 mt-12">
-        <div class="container mx-auto px-4">
-            <div class="text-center">
-                <p class="mb-4">© 2024 Akiko Adventures. All rights reserved.</p>
-                <p class="text-sm text-gray-400">
-                    <i class="fas fa-link mr-2"></i>
-                    This site contains affiliate links. We may earn a commission when you make a purchase through these links.
-                </p>
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2024 Akiko Adventures. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#" aria-label="Follow us on Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="Follow us on Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="Follow us on Facebook"><i class="fab fa-facebook"></i></a>
             </div>
         </div>
     </footer>
+
+    <script>
+        const blogData = [
+            {
+                'title': 'How to Fly to Japan for Under $500',
+                'excerpt': 'Discover the cheapest months, airlines, and routes to Tokyo – with live price tracking from Skyscanner.',
+                'image': '../assets/destinations/tokyo.jpg',
+                'link': 'how-to-fly-to-japan-for-under-500.html'
+            },
+            {
+                'title': 'Where to Stay in Tokyo – Best Hotels in 2025',
+                'excerpt': 'Compare Tokyo hotels under $100. Powered by Booking.com.',
+                'image': '../assets/destinations/tokyo-hotel.jpg',
+                'link': 'where-to-stay-in-tokyo.html'
+            },
+            {
+                'title': 'Where to Stay in London – Complete 2024 Guide',
+                'excerpt': 'Discover the best areas to stay in London, from budget-friendly neighborhoods to luxury districts.',
+                'image': '../assets/destinations/london-hotel.jpg',
+                'link': 'where-to-stay-in-london.html'
+            },
+            {
+                'title': 'Where to Stay in Sydney – Best Areas & Hotels 2024',
+                'excerpt': 'From beachside suburbs to the bustling CBD, find the perfect place to stay in Sydney.',
+                'image': '../assets/destinations/sydney-hotel.jpg',
+                'link': 'where-to-stay-in-sydney.html'
+            },
+            {
+                'title': '10 Hidden Gems in Kyoto\'s Ancient Streets',
+                'excerpt': 'Explore secret temples, traditional tea houses, and local markets away from the tourist crowds.',
+                'image': '../assets/destinations/kyoto.jpg',
+                'link': 'hidden-gems-kyoto.html'
+            },
+            {
+                'title': 'Ultimate Guide to Japanese Street Food',
+                'excerpt': 'From takoyaki to ramen, discover the best street food spots and must-try dishes across Japan.',
+                'image': '../assets/destinations/street-food.jpg',
+                'link': 'japanese-street-food-guide.html'
+            },
+            {
+                'title': 'Cherry Blossom Season: When and Where to Go',
+                'excerpt': 'Plan your perfect hanami experience with our comprehensive guide to cherry blossom viewing in Japan.',
+                'image': '../assets/destinations/cherry-blossom.jpg',
+                'link': 'cherry-blossom-season.html'
+            },
+            {
+                'title': 'Budget Travel in Japan: Complete Guide',
+                'excerpt': 'Tips and tricks for exploring Japan on a budget, from accommodation to transportation and food.',
+                'image': '../assets/destinations/budget-japan.jpg',
+                'link': 'budget-travel-in-japan.html'
+            },
+            {
+                'title': 'Best Day Trips from Tokyo',
+                'excerpt': 'Discover amazing destinations within easy reach of Tokyo, from Mount Fuji to historic Kamakura.',
+                'image': '../assets/destinations/mount-fuji.jpg',
+                'link': 'best-day-trips-from-tokyo.html'
+            }
+        ];
+
+        // Display blog posts
+        document.addEventListener('DOMContentLoaded', () => {
+            const postsContainer = document.querySelector('.blog-posts');
+            
+            blogData.forEach(post => {
+                const postElement = document.createElement('div');
+                postElement.className = 'blog-post';
+                postElement.innerHTML = `
+                    <img src="${post.image}" alt="${post.title}" onerror="this.src='../assets/destinations/placeholder.jpg'">
+                    <div class="post-content">
+                        <h2>${post.title}</h2>
+                        <p class="excerpt">${post.excerpt}</p>
+                        <a href="${post.link}" class="read-more">Read More</a>
+                    </div>
+                `;
+                postsContainer.appendChild(postElement);
+            });
+        });
+    </script>
 </body>
-</html> 
+</html>
